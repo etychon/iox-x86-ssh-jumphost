@@ -10,8 +10,9 @@ app:
     PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     TERM: xterm
   resources:
-    cpu: "400"
+    cpu: "100"
     memory: "128"
+    disk: "20"
     network:
     - interface-name: eth0
       ports:
