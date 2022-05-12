@@ -1,0 +1,27 @@
+descriptor-schema-version: "2.7"
+info:
+  name: iox-x86-ssh-jumphost
+  version: latest
+app:
+  cpuarch: x86_64
+  env:
+    DEBIAN_FRONTEND: noninteractive
+    HOME: /root
+    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    TERM: xterm
+  resources:
+    cpu: "400"
+    memory: "128"
+    network:
+    - interface-name: eth0
+      ports:
+        tcp:
+          - 23
+    profile: custom
+  startup:
+    rootfs: rootfs.tar
+    target:
+    - bash
+    - /idle.sh
+    workdir: /root
+  type: docker
